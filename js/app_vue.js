@@ -5,8 +5,9 @@ new Vue({
     },
     methods: {
         earncard_ChangeMessage: function() {
-            var jqxhr = $.get('http://localhost:3000/vue', function(data, status) {
-                this.earncard_message = 'Hello LaraBase1!' + data;
+            thisVue = this;
+            var jqxhr = $.get('vue', function(data, status) {
+                thisVue.earncard_message = 'Hello LaraBase1!' + data;
             });
         }
     }
