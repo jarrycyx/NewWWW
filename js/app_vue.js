@@ -7,7 +7,7 @@ new Vue({
         earncard_ChangeMessage: function() {
             thisVue = this;
             var jqxhr = $.get('devices/candle', function(data, status) {
-                thisVue.candle_message = 'ON' + data;
+                thisVue.candle_message = data;
             });
         }
     }
