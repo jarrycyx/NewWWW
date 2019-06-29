@@ -7,7 +7,7 @@ new Vue({
         earncard_ChangeMessage: function() {
             thisVue = this;
             var jqxhr = $.get('vue', function(data, status) {
-                thisVue.earncard_message = 'Hello LaraBase3!' + data;
+                thisVue.earncard_message = 'Hello LaraBase4!' + data;
             });
         }
     }
