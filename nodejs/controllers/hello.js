@@ -7,7 +7,7 @@ var fn_vue = async(ctx, next) => {
     ctx.response.body = "from server localhost: hello";
 };
 
-var fn_vue = async(ctx, next) => {
+var fn_vue_but = async(ctx, next) => {
     ctx.response.body = "from server localhost: vuebut";
 };
 
