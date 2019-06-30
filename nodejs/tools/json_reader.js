@@ -1,6 +1,7 @@
 'use strict '
 
 var fs = require('fs');
+var rootPath = "D:/11PRojects/GIT" || process.env.HOME;
 
 var todoItem = {
     createTime: "",
@@ -39,8 +40,8 @@ for (var i = 0; i < 10; i++) {
     todayList.push(newItem);
     console.log(newItem);
 }
-writeTodayListToJson(todayList, "./../../../WWW-data/1.json");
-readTodayListFromJson("./../../../WWW-data/1.json");
+writeTodayListToJson(todayList, rootPath + "/jarrycyx/WWW-data/1.json");
+readTodayListFromJson(rootPath + "/jarrycyx/WWW-data/1.json");
 
 module.exports = writeTodayListToJson;
 module.exports = readTodayListFromJson;
