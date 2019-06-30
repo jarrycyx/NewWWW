@@ -1,7 +1,8 @@
 'use strict '
 
 var fs = require('fs');
-var rootPath = "D:/11PRojects/GIT" || process.env.HOME;
+var rootPath = process.env.HOME;
+if (!rootPath) rootPath = "D:/11PRojects/GIT";
 
 var todoItem = {
     createTime: "",
