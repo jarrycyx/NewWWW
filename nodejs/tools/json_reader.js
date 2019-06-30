@@ -39,8 +39,8 @@ for (var i = 0; i < 10; i++) {
     todayList.push(newItem);
     console.log(newItem);
 }
-writeTodayListToJson(todayList, "./../../WWW-data/1.json");
-readTodayListFromJson("./../../WWW-data/1.json");
+writeTodayListToJson(todayList, "./../../../WWW-data/1.json");
+readTodayListFromJson("./../../../WWW-data/1.json");
 
 module.exports = writeTodayListToJson;
 module.exports = readTodayListFromJson;
