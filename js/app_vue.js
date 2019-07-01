@@ -22,8 +22,7 @@ var todolistVue = new Vue({
     methods: {
         click1_Done: function(index) {
             $.ajax({
-                url: 'todolist/',
-                data: { type: '0', idx: index }, //type: 0:del, 1:add
+                url: 'todolist/?type=0&idx=0&date=20190701', //type: 0:del, 1:add
                 type: "POST",
                 dataType: "json",
                 //dataType : 'json',
