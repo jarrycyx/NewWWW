@@ -294,14 +294,17 @@
                                 <!-- Card Body -->
                                 <div style="height:23rem" class="m-2 card-body">
                                     <ul id="todolist" style="list-style-type:none" class="ml-n5">
-                                        <li style="height:3rem" v-for="item in items ">
+                                        <li style="height:3rem" v-for="(item,index) in items ">
                                             <div class="row m-2">
-                                                <p class="col-9 h6 mb-0 text-gray-800 line-limit-length">
+                                                <p class="col-7 h6 mb-0 text-gray-800 line-limit-length">
                                                     {{ item.content }}
                                                 </p>
-                                                <p class="col-3 h6 mb-0 text-gray-500 line-limit-length">
+                                                <p class="col-4 h6 mb-0 text-gray-500 line-limit-length">
                                                     {{ item.scheTime }}
                                                 </p>
+                                                <a class="btn btn-success btn-circle btn-sm" style="height:1rem; width: 1rem" v-on:click="click1_Done(index)">
+                                                    <i class="fas fa-check text-white"></i>
+                                                </a>
                                             </div>
                                         </li>
                                     </ul>
@@ -319,7 +322,7 @@
                 <footer class="sticky-footer ">
                     <div class="container my-auto ">
                         <div class="copyright text-center my-auto ">
-                            <span>Copyright &copy; Your Website 2019</span>
+                            <span>Copyright &copy; CYX Admin 2019</span>
                         </div>
                     </div>
                 </footer>
