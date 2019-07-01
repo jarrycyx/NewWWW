@@ -54,7 +54,7 @@ async function delTodayList(date, index) {
     var dataStr = await readFile(rootPath + "/jarrycyx/WWW-data/" + date + ".json");
     var dataObj = JSON.parse(dataStr);
     console.log(dataObj);
-    dataObj.remove(index, index);
+    dataObj.remove(index);
     var rea = await writeFile(rootPath + "/jarrycyx/WWW-data/" + date + ".json", JSON.stringify(dataObj));
     //readTodayListFromJson(date);
     return rea;
