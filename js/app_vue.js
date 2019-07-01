@@ -28,7 +28,7 @@ var todolistVue = new Vue({
                 dataType: "json",
                 //dataType : 'json',
                 success: function(msg) {
-                    todolistVue.items = JSON.parse(msg).slice(0, 6);
+                    refreshTodoItems();
                 }
             });
         }
