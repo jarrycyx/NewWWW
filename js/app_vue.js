@@ -39,7 +39,7 @@ var todolistVue = new Vue({
 function refreshTodoItems() {
     $.ajax({
         url: 'todolist/',
-        data: { idx: index }, //type: 0:del, 1:add
+        data: { date: "20190701" }, //type: 0:del, 1:add
         type: 'get',
         success: function(msg) {
             todolistVue.items = JSON.parse(msg).slice(0, 6);
