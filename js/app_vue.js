@@ -34,6 +34,26 @@ var todolistVue = new Vue({
     }
 });
 
+var cmdVue = new Vue({
+    el: "#cmd_inputbox",
+    data: {
+        command: 'CMD'
+    },
+    methods: {
+        cmd_Click: function() {
+            var cmd_str = this.command;
+            $.ajax({
+                url: 'todolist/?type=1&content=' + cmd_str + '&date=20190701', //type: 0:del, 1:add
+                type: "GET",
+                dataType: "json",
+                success: function(msg) {
+                    refreshTodoItems();
+                }
+            });
+        }
+    }
+});
+
 
 function refreshTodoItems() {
     $.ajax({
