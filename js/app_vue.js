@@ -18,24 +18,31 @@ var todolistVue = new Vue({
     data: {
         candle_message: '0 W',
         items: "",
-        checker: false
+        checker: 0
     },
     methods: {
         click1_Done: function(index) {
+            index = new Number(index);
             var thisVue = this;
+            this.checker = 1;
+            //this.checker = 0;
             $.ajax({
                 url: 'todolist/?type=0&idx=' + index + '&date=20190701', //type: 0:del, 1:add
                 type: "GET",
                 dataType: "json",
                 //dataType : 'json',
                 success: function(msg) {
-                    thisVue.checker = false;
+                    thisVue.checker = 0;
                     refreshTodoItems();
+                },
+                error: function(err) {
+                    thisVue.checker = 0;
                 }
             });
         }
     }
 });
+
 
 var cmdVue = new Vue({
     el: "#cmd_inputbox",
