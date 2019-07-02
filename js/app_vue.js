@@ -9,6 +9,12 @@ function keyUp(e) {
 
 document.onkeyup = keyUp;
 
+Array.prototype.remove = function(from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+};
+
 
 
 var earncardVue = new Vue({
@@ -31,25 +37,23 @@ var todolistVue = new Vue({
     data: {
         candle_message: '0 W',
         items: "",
-        checker: 0
+        checker: [0, 0, 0, 0, 0]
     },
     methods: {
         click1_Done: function(index) {
-            index = new Number(index);
             var thisVue = this;
-            this.checker = 1;
-            //this.checker = 0;
             $.ajax({
                 url: 'todolist/?type=0&idx=' + index + '&date=20190701', //type: 0:del, 1:add
                 type: "GET",
                 dataType: "json",
                 //dataType : 'json',
                 success: function(msg) {
-                    thisVue.checker = 0;
+                    thisVue.checker[index] = 0;
                     refreshTodoItems();
                 },
                 error: function(err) {
-                    thisVue.checker = 0;
+                    thisVue.checker[index] = 0;
+                    refreshTodoItems();
                 }
             });
         }
