@@ -294,9 +294,9 @@
                                     <h6 class="m-0 font-weight-bold text-primary">To-do List</h6>
                                 </div>
                                 <!-- Card Body -->
-                                <div style="height:24rem" class="card-body">
+                                <div style="height:24rem; overflow-y:scroll" class="card-body">
                                     <ul id="todolist" style="list-style-type:none" class="ml-n5">
-                                        <li style="height:3rem" v-for="(item,index) in items ">
+                                        <li style="height:2.5rem" v-for="(item,index) in items ">
                                             <div class="row m-2">
                                                 <p class="col-7 h6 mb-0 text-gray-800 line-limit-length">
                                                     {{ item.content }}
