@@ -1,3 +1,16 @@
+function keyUp(e) {
+    var currKey = 0,
+        e = e || event;
+    currKey = e.keyCode || e.which || e.charCode;
+    //var keyName = String.fromCharCode(currKey);
+    //alert("按键码: " + currKey + " 字符: " + keyName);
+    if (currKey == 9) document.getElementById('cmdInput').focus()
+}
+
+document.onkeyup = keyUp;
+
+
+
 var earncardVue = new Vue({
     el: '#earncard',
     data: {

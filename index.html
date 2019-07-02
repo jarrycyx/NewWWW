@@ -107,7 +107,7 @@
                     <!-- Topbar Search -->
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group" id="cmd_inputbox">
-                            <input type="text" v-model="command" onkeydown="if(event.keyCode==13) {cmdKeyClick()}" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input id="cmdInput" type="text" v-model="command" onkeydown="if(event.keyCode==13) {cmdKeyClick()}" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                             <input style="display: none;" type="text" v-model="command" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button" v-on:click="cmd_Click">
