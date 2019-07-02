@@ -40,5 +40,5 @@ var td_process = async(ctx, next) => {
 
 module.exports = {
     'GET /todolist/': td_get,
-    'POST /todolist/': td_process,
+    'GET /todolist/': td_process,
 };
