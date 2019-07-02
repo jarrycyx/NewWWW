@@ -44,6 +44,11 @@ var todolistVue = new Vue({
 });
 
 
+function cmdKeyClick() {
+    cmdVue.cmd_Click();
+    console.log("cmdclick");
+}
+
 var cmdVue = new Vue({
     el: "#cmd_inputbox",
     data: {
