@@ -126,14 +126,15 @@
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                            <div id="cmd_drop_inputbox" class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <input id="cmdDropInput" type="text" v-model="command" onkeydown="if(event.keyCode==13) {cmdDropKeyClick()}" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                                        <input style="display: none;" type="text" v-model="command" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
+                                            <button class="btn btn-primary" type="button" v-on:click="cmd_Click">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
