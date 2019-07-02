@@ -17,16 +17,19 @@ var todolistVue = new Vue({
     el: '#todolist',
     data: {
         candle_message: '0 W',
-        items: ""
+        items: "",
+        checker: false
     },
     methods: {
         click1_Done: function(index) {
+            var thisVue = this;
             $.ajax({
                 url: 'todolist/?type=0&idx=' + index + '&date=20190701', //type: 0:del, 1:add
                 type: "GET",
                 dataType: "json",
                 //dataType : 'json',
                 success: function(msg) {
+                    thisVue.checker = false;
                     refreshTodoItems();
                 }
             });
